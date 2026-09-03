@@ -1,4 +1,4 @@
-#Atividades
+'''#Atividades
 
     Exercício 1: Considere a função abaixo, que recebe uma lista e imprime o primeiro elemento: 
     def imprime_primeiro(lista): 
@@ -133,36 +133,100 @@ while True:
         busca_aluno_linear(cpf)
 
 #######################################################################################################################################################
-
+'''
 #Projeto 2
 
-def recomendar_disciplinas(historico_original, todos_historicos):
-    lista_recomendacoes = []
-
-    for historico_outro in todos_historicos:
-        tem_algo_em_comum = False
-
-        
-        for disciplina in historico_outro:
-            if disciplina in historico_original:
-                tem_algo_em_comum = True
-
-        
-        if tem_algo_em_comum:
-            for disciplina in historico_outro:
-                if disciplina not in historico_original and disciplina not in lista_recomendacoes:
-                    lista_recomendacoes.append(disciplina)
-
-    return lista_recomendacoes
-
-
-
-historico_aluno_original = ["MAT101", "PROG101"]
-
-historicos_outros_alunos = [
-    ["MAT101", "BD101"],
-    ["FIS101", "QUI101"],
-    ["PROG101", "ML101", "PLN101"]
+original = {
+    "nome": "Anderlimson",
+    "historico": ["Matemática", "Portugues"]
+}
+solicitacoes = []
+alunos = [
+    {
+        "nome": "Ana",
+        "historico": ["Matemática", "Português", "Ciências", "História"]
+    },
+    {
+        "nome": "Bruno",
+        "historico": ["Português", "Geografia", "Matemática"]
+    },
+    {
+        "nome": "Carlos",
+        "historico": ["Matemática", "Ciências", "Educação Física"]
+    },
+    {
+        "nome": "Daniela",
+        "historico": ["Português", "História", "Geografia", "Artes"]
+    },
+    {
+        "nome": "Eduardo",
+        "historico": ["Matemática", "Português", "Ciências"]
+    },
+    {
+        "nome": "Fernanda",
+        "historico": ["Português", "Matemática", "Artes", "História"]
+    },
+    {
+        "nome": "Gabriel",
+        "historico": ["Matemática", "Geografia", "Ciências"]
+    },
+    {
+        "nome": "Helena",
+        "historico": ["Português", "História", "Artes"]
+    },
+    {
+        "nome": "Igor",
+        "historico": ["Matemática", "Português", "Educação Física"]
+    },
+    {
+        "nome": "Juliana",
+        "historico": ["Português", "Ciências", "Geografia", "Artes"]
+    },
+    {
+        "nome": "Lucas",
+        "historico": ["Matemática", "História", "Geografia"]
+    },
+    {
+        "nome": "Mariana",
+        "historico": ["Português", "Matemática", "Ciências"]
+    },
+    {
+        "nome": "Nathan",
+        "historico": ["Matemática", "Ciências", "Educação Física"]
+    },
+    {
+        "nome": "Olivia",
+        "historico": ["Português", "História", "Geografia"]
+    },
+    {
+        "nome": "Pedro",
+        "historico": ["Matemática", "Português", "História", "Ciências"]
+    },
+    {
+        "nome": "Rafael",
+        "historico": ["Matemática", "Geografia", "Educação Física"]
+    },
+    {
+        "nome": "Sofia",
+        "historico": ["Português", "Matemática", "Artes"]
+    },
+    {
+        "nome": "Thiago",
+        "historico": ["Ciências", "História"]
+    },
+    {
+        "nome": "Valentina",
+        "historico": ["Português", "Geografia", "Artes", "Ciências"]
+    },
+    {
+        "nome": "Vinicius",
+        "historico": ["Matemática", "Português", "Geografia"]
+    }
 ]
 
-print(recomendar_disciplinas(historico_aluno_original, historicos_outros_alunos))
+
+for aluno in alunos:
+    if any(materia in aluno["historico"] for materia in original["historico"]):
+        solicitacoes.append(aluno["nome"])
+
+print(solicitacoes)
