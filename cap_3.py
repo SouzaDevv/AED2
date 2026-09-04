@@ -157,4 +157,20 @@ def verificar_convidado(nome, lista):
 
 nome = input("Digite o nome do convidado: ")
 
-verificar_convidado(nome, convidados)
+verificar_convidado(nome, convidados
+
+l = [5, 10, 20, 21, 3, 15, 1, 2, 18, 26]
+
+n = int(input("Digite um numero:\n"))
+
+def buscar_sequencial(l, n):
+
+    for i in range(len(l)):
+        if l[i] == n:
+            return i
+    else:
+        return -1
+        
+print(buscar_sequencial(l, n))
+    
+
