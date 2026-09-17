@@ -47,7 +47,6 @@ clientes = [
     "Beatriz"
 ]
 
-
 def buscar_cliente(nome, clientes):
 
     for i in range(len(clientes)):
